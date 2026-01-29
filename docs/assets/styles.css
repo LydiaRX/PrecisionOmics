@@ -98,7 +98,596 @@ header {
 .logo-container {
     margin-top: 10px;
     display: flex;
+    align-items: center;
     gap: 10px;
+}
+
+/* Executive Summary Styles */
+.program-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-3);
+    margin: var(--space-4) 0;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    background: var(--bg-deep);
+    border-radius: var(--radius);
+}
+
+.project-icon {
+    font-size: 1.5rem;
+}
+
+.impact-stat {
+    text-align: center;
+    margin-top: var(--space-4);
+    padding: var(--space-4);
+    background: linear-gradient(135deg, var(--accent), var(--accent-3));
+    color: white;
+    border-radius: var(--radius);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-1);
+}
+
+/* Cancer Burden Styles */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.stat-card {
+    background: var(--card);
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(7, 16, 13, 0.12);
+}
+
+.stat-card .stat-number {
+    color: var(--accent);
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: var(--space-1);
+}
+
+.stat-card .stat-label {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.burden-analysis {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+/* Precision Medicine Styles */
+.paradigm-shift {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.approach-card {
+    background: var(--card);
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.approach-visual {
+    margin: var(--space-3) 0;
+    padding: var(--space-3);
+    background: var(--bg);
+    border-radius: var(--radius);
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.drug-box {
+    background: var(--accent-2);
+    color: white;
+    padding: var(--space-1) var(--space-2);
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.patients-group {
+    display: flex;
+    gap: var(--space-1);
+    flex-wrap: wrap;
+}
+
+.patient {
+    padding: var(--space-1) var(--space-2);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.patient.responder {
+    background: #d4edda;
+    color: #155724;
+}
+
+.patient.non-responder {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.patient.toxic {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.biomarker-groups {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.biomarker-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.patient-group {
+    flex: 1;
+    padding: var(--space-1) var(--space-2);
+    background: var(--accent);
+    color: white;
+    border-radius: 6px;
+    font-size: 0.8rem;
+}
+
+.approach-desc {
+    font-style: italic;
+    color: var(--muted);
+    margin-top: var(--space-2);
+}
+
+.workflow-section {
+    margin-top: var(--space-4);
+}
+
+.workflow-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-2);
+    margin: var(--space-4) 0;
+}
+
+.step {
+    text-align: center;
+    padding: var(--space-2);
+    background: var(--bg);
+    border-radius: var(--radius);
+    border: 2px solid var(--accent);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-2);
+    font-weight: 700;
+}
+
+.step-text {
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+.strategic-goal {
+    background: var(--bg-deep);
+    padding: var(--space-3);
+    border-radius: var(--radius);
+    margin-top: var(--space-3);
+    border-left: 4px solid var(--accent);
+}
+
+.subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: var(--space-3);
+}
+
+/* WGS Section Styles */
+.wgs-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    margin: var(--space-4) 0;
+}
+
+.wgs-item {
+    background: var(--bg);
+    border-radius: var(--radius);
+    padding: var(--space-4);
+    text-align: center;
+    border: 2px solid var(--accent);
+}
+
+.wgs-coverage {
+    margin-bottom: var(--space-3);
+}
+
+.coverage-percent {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: var(--space-1);
+}
+
+.coverage-label {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.wgs-details h4 {
+    margin: 0 0 var(--space-2) 0;
+    color: var(--accent-3);
+}
+
+.clinical-benefit {
+    background: var(--bg-deep);
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    margin-top: var(--space-4);
+    text-align: center;
+}
+
+.benefit-stat {
+    margin-top: var(--space-2);
+}
+
+.advantages-grid {
+    margin-top: var(--space-4);
+}
+
+.advantage-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+}
+
+.advantage-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.advantage-item h5 {
+    margin: 0 0 var(--space-1) 0;
+    color: var(--accent-3);
+}
+
+.advantage-item p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.quote-card {
+    background: linear-gradient(135deg, var(--accent), var(--accent-3));
+    color: white;
+    padding: var(--space-5);
+    border-radius: var(--radius);
+    margin-top: var(--space-4);
+    text-align: center;
+}
+
+.quote-card blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 0 0 var(--space-3) 0;
+    line-height: 1.6;
+}
+
+.quote-card p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Expected Outcomes Styles */
+.outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-4);
+    margin: var(--space-4) 0;
+}
+
+.outcome-card {
+    background: var(--card);
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.outcome-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(7, 16, 13, 0.12);
+}
+
+.outcome-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.outcome-icon {
+    font-size: 1.5rem;
+}
+
+.outcome-header h4 {
+    margin: 0;
+    color: var(--accent-3);
+}
+
+.outcome-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.outcome-card li {
+    margin-bottom: var(--space-2);
+    padding-left: var(--space-3);
+    position: relative;
+}
+
+.outcome-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.impact-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-3);
+    margin: var(--space-4) 0;
+}
+
+.impact-card {
+    background: var(--card);
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.impact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(7, 16, 13, 0.12);
+}
+
+.impact-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+    margin-bottom: var(--space-1);
+}
+
+.impact-label {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+.vision-section {
+    margin-top: var(--space-4);
+}
+
+.vision-items {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.vision-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background: var(--bg);
+    border-radius: var(--radius);
+}
+
+.vision-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.vision-item h5 {
+    margin: 0 0 var(--space-1) 0;
+    color: var(--accent-3);
+}
+
+.vision-item p {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* Timeline Styles */
+.timeline-phases {
+    display: grid;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+.phase-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-4);
+    background: var(--card);
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    align-items: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phase-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(7, 16, 13, 0.12);
+}
+
+.phase-number {
+    width: 60px;
+    height: 60px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.phase-content h4 {
+    margin: 0 0 var(--space-1) 0;
+    color: var(--accent-3);
+}
+
+.phase-duration {
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 var(--space-2) 0;
+}
+
+.phase-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-3) 0;
+}
+
+.phase-content li {
+    margin-bottom: var(--space-1);
+    padding-left: var(--space-3);
+    position: relative;
+}
+
+.phase-content li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.phase-funding {
+    background: var(--accent-2);
+    color: white;
+    padding: var(--space-2) var(--space-3);
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.phase-goal {
+    background: linear-gradient(135deg, var(--accent), var(--accent-3));
+    color: white;
+    padding: var(--space-3);
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-align: center;
+    margin-top: var(--space-2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .paradigm-shift {
+        grid-template-columns: 1fr;
+    }
+    
+    .burden-analysis {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .workflow-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .program-projects {
+        grid-template-columns: 1fr;
+    }
+    
+    .wgs-comparison {
+        grid-template-columns: 1fr;
+    }
+    
+    .outcomes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .impact-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .phase-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .phase-number {
+        margin: 0 auto var(--space-2);
+    }
+    
+    .advantage-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .outcome-header {
+        justify-content: center;
+    }
+    
+    .vision-item {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 .logo-container span {
@@ -306,9 +895,15 @@ section {
     gap: var(--space-3);
 }
 
+.mission-vision-grid li {
+    padding-left: var(--space-3);
+    position: relative;
+}
 
 .mission-vision-grid li::before {
     content: "✓";
+    position: absolute;
+    left: 0;
     color: var(--accent);
     font-size: 1.2em;
     font-weight: 700;
@@ -376,6 +971,21 @@ section {
     display: grid;
     gap: var(--space-2);
     box-shadow: 0 12px 24px rgba(10, 30, 22, 0.08);
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.team-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.team-header .team-role {
+    margin-top: 2px;
 }
 
 .team-card.is-expanded {
@@ -642,6 +1252,23 @@ footer {
 .news-empty {
     color: var(--muted);
     padding: var(--space-3);
+}
+
+.vision-quote {
+    margin: var(--space-4) 0;
+    padding: var(--space-4);
+    background: var(--bg);
+    border-radius: var(--radius);
+    border-left: 4px solid var(--accent);
+}
+
+.vision-quote blockquote {
+    margin: 0;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--accent-3);
+    line-height: 1.6;
+    text-align: center;
 }
 
 .reveal {
