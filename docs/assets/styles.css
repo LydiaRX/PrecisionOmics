@@ -1444,10 +1444,10 @@ section {
     background: linear-gradient(135deg, var(--accent), var(--accent-3));
     color: white;
     font-weight: 600;
-    padding: var(--space-2) var(--space-4);
+    padding: var(--space-1) var(--space-3);
     border-radius: calc(var(--radius) - 4px);
     cursor: pointer;
-    margin-top: auto;
+    margin-top: var(--space-1);
     font-size: var(--text-sm);
     transition: all 0.2s ease;
     box-shadow: 0 6px 16px rgba(14, 107, 78, 0.32);
