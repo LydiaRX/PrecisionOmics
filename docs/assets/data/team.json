@@ -1,0 +1,110 @@
+[
+  {
+    "id": "najib-rehman",
+    "group": "LydiaRX",
+    "name": "Najib Rehman",
+    "role": "CEO. Co-Founder",
+    "image": "najib-rehman.png",
+    "bio_short": "20-year data and analytics veteran in life sciences.",
+    "bio_full": "Najib is a 20-year data and analytics veteran in life sciences, with roles spanning big pharma to founding ATMPS Ltd, which launched the first patented blockchain solution for personalized medicine. He focuses on transforming data into commercial value and enabling AI/ML capabilities. A trusted advisor to firms like Pfizer and AZ, Najib also founded the successful German tech consultancy, Kokoro, demonstrating a deep understanding of high-performing teams."
+  },
+  {
+    "id": "sinica-alboaie",
+    "group": "LydiaRX",
+    "name": "Sînică Alboaie, PHD",
+    "role": "CTO. Co-Founder",
+    "image": "sinica-alboaie.png",
+    "bio_short": "PhD in Privacy Preserving Technologies and Blockchain.",
+    "bio_full": "Sînică holds a PhD in Privacy Preserving Technologies and Blockchain and is an experienced entrepreneur, having founded Axiologic Research in 2003. He is the initiator of OpenDSU (2016), an open-source project utilized in enterprise blockchain solutions for the pharma industry and an ongoing Horizon Europe project focused on Trustworthy AI and research on AI Agents. He has led dozens of projects for his startups and is passionate about AI-assisted research and building automations using AI Agents."
+  },
+  {
+    "id": "daud-farooq",
+    "group": "LydiaRX",
+    "name": "Daud Farooq",
+    "role": "Legal. Co-Founder",
+    "initials": "DF",
+    "bio_short": "Over nineteen years of experience as a Lawyer.",
+    "bio_full": "Over nineteen years of experience as a Lawyer and thirteen as a Managing Partner in a UK Law Firm. Extensive knowledge of complex commercial transactions including cross border negotiation. Working for high profile clients in international dispute resolution involving complex financial and trust arrangements. Negotiated for clients with Governments and Sovereign Funds and has experience in funding arrangements and structuring projects for delivery. Business interests in various countries and a strong presence in Algeria, Pakistan and Turkey."
+  },
+  {
+    "id": "andrew-roddam",
+    "group": "LydiaRX",
+    "name": "Dr Andrew Roddam",
+    "role": "Advisor",
+    "image": "andrew-roddam.png",
+    "bio_short": "A leader in large-scale data infrastructure and genomics.",
+    "bio_full": "Dr. Andrew Roddam: A leader in large-scale data infrastructure and genomics. His experience as CEO of Our Future Health (UK’s largest health research programme) and Chair of SNOMED International provides essential guidance for building LydiaRx's robust, scalable genetic data architecture."
+  },
+  {
+    "id": "khurem-farooq",
+    "group": "LydiaRX",
+    "name": "Khurem Farooq",
+    "role": "Advisor",
+    "image": "khurem-farooq.png",
+    "bio_short": "Senior leader in the pharmaceutical and biotech sector.",
+    "bio_full": "Khurem is a senior leader in the pharmaceutical and biotech sector with extensive global experience in bringing pharmacology, biologics and advance therapies from early stage to market He is currently the CEO of Verdiva Bio."
+  },
+  {
+    "id": "shahid-hanif",
+    "group": "LydiaRX",
+    "name": "Dr Shahid Hanif",
+    "role": "Advisor",
+    "image": "shahid-hanif.png",
+    "bio_short": "A strategist focused on Real-World Evidence (RWE) and market access.",
+    "bio_full": "Dr. Shahid Hanif: A strategist focused on Real-World Evidence (RWE) and market access. His leadership at the GetReal Institute and the ABPI (pharma industry) is key to guiding LydiaRx on how to use its data to validate technologies, gain regulatory approval, and drive commercial value."
+  },
+  {
+    "id": "wajahat-khan",
+    "group": "Premium",
+    "name": "Wajahat Khan",
+    "role": "CEO. Co-Founder",
+    "image": "wajahat-khan.png",
+    "bio_short": "CEO of Percision Omics and Premium Labs.",
+    "bio_full": "Wajahat Khan is the CEO of Percision Omics and Premium Labs, a prominent diagnostic and health complex based in Rawalpindi, Pakistan. Which provides advanced medical diagnostic and Radiological Services. He also got award from President of Pakistan against his services to the people of Pakistan during COVID-19 pandemic"
+  },
+  {
+    "id": "hamid-ali-awan",
+    "group": "Premium",
+    "name": "Hamid Ali Awan",
+    "role": "Director Technical",
+    "image": "hamid-ali-awan.png",
+    "bio_short": "Over 18 years of experience at the intersection of genomics, technology, and marketing.",
+    "bio_full": "With over 18 years of experience at the intersection of genomics, technology, and marketing, Throughout his career, Mr. Hamid has worked with industry-leading molecular biology brands, including Illumina, Thermo Fisher, Applied Biosystems, and Cepheid. He has played a pivotal role in introducing cutting-edge genomic technologies to clinicians, academics, and researchers, driving advancements in molecular diagnostics and personalized medicine."
+  },
+  {
+    "id": "ali-khan",
+    "group": "Premium",
+    "name": "Ali Khan",
+    "role": "Legal Advisor",
+    "initials": "AK",
+    "bio_short": "Prominent Pakistani lawyer, leading law firm in Pakistan.",
+    "bio_full": "Barrister Ali Khan is a prominent Pakistani lawyer, leading law firm in Pakistan specializing in high-value commercial transactions, energy, infrastructure, public-private partnerships (PPP), and regulatory frameworks. Recognized as a pioneer in Pakistan's PPP sector, with expertise in advising international and local clients on complex projects. His firm has been awarded 'Pakistan Firm of the Year' and is highly regarded for providing end-to-end legal services in different niche sectors"
+  },
+  {
+    "id": "jawad-hasan",
+    "group": "Premium",
+    "name": "Dr Jawad Hasan",
+    "role": "Consultant Genetics",
+    "image": "jawad-hasan.png",
+    "bio_short": "Consultant in Medical Genetics at Shifa International Hospital.",
+    "bio_full": "Dr. He serves as a Consultant in Medical Genetics at Shifa International Hospital and with a Ph.D. from Quaid-e-Azam University, he specializes in human genetics, genetic disorders, inherited diseases, and related fields, contributing to clinical practice, research, and public awareness through publications and consultations on topics like congenital conditions and medical genetics testing."
+  },
+  {
+    "id": "muhammd-zahid",
+    "group": "Premium",
+    "name": "Dr Muhammd Zahid",
+    "role": "Consultant Genetics",
+    "image": "muhammd-zahid.png",
+    "bio_short": "Pakistani human geneticist and molecular biologist.",
+    "bio_full": "Dr. Muhammad Zahid is a Pakistani human geneticist and molecular biologist. He holds a PhD in Human/Medical Genetics from Quaid-i-Azam University, Islamabad. He practices as a Geneticist, offering consultations on genetic disorders, prenatal screening, genetic counselling, inherited conditions, rare genetic disorders, and genomic testing. With expertise in NGS (Next-Generation Sequencing) applications and molecular techniques."
+  },
+  {
+    "id": "ms-areej",
+    "group": "Premium",
+    "name": "Ms Areej",
+    "role": "International Relation Officer",
+    "image": "ms-areej.png",
+    "bio_short": "International Relation Officer",
+    "bio_full": "Ms Areej"
+  }
+]
