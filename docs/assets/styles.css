@@ -105,18 +105,250 @@ header {
 /* Executive Summary Styles */
 .program-projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-3);
-    margin: var(--space-4) 0;
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+    margin: var(--space-3) 0;
 }
 
 .project-item {
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    padding: var(--space-3);
-    background: var(--bg-deep);
+    padding: var(--space-2);
+    background: var(--bg);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.project-item:hover {
+    background: var(--accent-2);
+    transform: translateX(5px);
+}
+
+.project-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.project-item h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-3);
+}
+
+/* Why Patients Suffer Section */
+.challenge-analysis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-4);
+    margin: var(--space-4) 0;
+}
+
+.challenge-card {
+    background: var(--bg);
+    padding: var(--space-4);
     border-radius: var(--radius);
+    border-left: 4px solid var(--accent-2);
+}
+
+.challenge-card h4 {
+    margin: 0 0 var(--space-2) 0;
+    color: var(--accent-3);
+}
+
+/* Current Treatment Section */
+.treatment-overview {
+    margin-bottom: var(--space-4);
+}
+
+.treatment-details {
+    margin-top: var(--space-4);
+}
+
+.treatment-details h4 {
+    color: var(--accent-3);
+    margin: var(--space-3) 0 var(--space-2) 0;
+}
+
+.treatment-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.treatment-details li {
+    padding-left: var(--space-3);
+    position: relative;
+    margin-bottom: var(--space-1);
+}
+
+.treatment-details li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.limitations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+.limitation-card {
+    background: var(--card);
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-top: 3px solid var(--accent-2);
+}
+
+.limitation-card h4 {
+    margin: 0 0 var(--space-2) 0;
+    color: var(--accent-3);
+}
+
+/* Global Revolution Section */
+.workflow-visual {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-3);
+    margin: var(--space-4) 0;
+}
+
+.workflow-step {
+    text-align: center;
+    padding: var(--space-3);
+    background: var(--bg);
+    border-radius: var(--radius);
+    border: 2px solid var(--accent);
+}
+
+.step-number {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    line-height: 40px;
+    margin: 0 auto var(--space-2);
+    font-weight: 700;
+}
+
+.workflow-step h4 {
+    margin: 0 0 var(--space-1) 0;
+    color: var(--accent-3);
+}
+
+.workflow-step p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* Success Stories Section */
+.success-stories-grid {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.success-card {
+    background: var(--card);
+    padding: var(--space-5);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.success-stats {
+    display: flex;
+    justify-content: center;
+    margin: var(--space-4) 0;
+}
+
+.success-stat {
+    text-align: center;
+}
+
+.case-study {
+    margin-top: var(--space-4);
+    padding: var(--space-4);
+    background: var(--bg);
+    border-radius: var(--radius);
+}
+
+.case-study h4 {
+    margin: 0 0 var(--space-2) 0;
+    color: var(--accent-3);
+}
+
+/* National Programs Section */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-4);
+}
+
+.program-card {
+    background: var(--card);
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.program-stats {
+    display: flex;
+    justify-content: center;
+    margin: var(--space-3) 0;
+}
+
+.program-stat {
+    text-align: center;
+}
+
+/* Local Manufacturing Section */
+.manufacturing-overview {
+    margin-top: var(--space-4);
+}
+
+.manufacturing-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.value-chain {
+    margin-top: var(--space-4);
+}
+
+.value-chain h4 {
+    color: var(--accent-3);
+    margin: 0 0 var(--space-3) 0;
+}
+
+.chain-steps {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.chain-step {
+    padding: var(--space-3);
+    background: var(--bg);
+    border-radius: var(--radius);
+    border-left: 4px solid var(--accent-2);
+}
+
+.chain-step h5 {
+    margin: 0 0 var(--space-1) 0;
+    color: var(--accent-3);
+}
+
+.chain-step p {
+    margin: 0;
+    color: var(--muted);
 }
 
 .project-icon {
@@ -684,9 +916,28 @@ header {
         justify-content: center;
     }
     
-    .vision-item {
-        flex-direction: column;
-        text-align: center;
+    .workflow-visual {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .challenge-analysis {
+        grid-template-columns: 1fr;
+    }
+    
+    .limitations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .programs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .manufacturing-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .chain-steps {
+        gap: var(--space-2);
     }
 }
 
@@ -713,11 +964,17 @@ nav a {
     padding: 8px 12px;
     border-radius: 999px;
     transition: 0.2s ease;
+    white-space: nowrap;
 }
 
-nav a:hover,
+nav a:hover {
+    background: var(--accent-2);
+    color: var(--accent-3);
+}
+
 nav a[aria-current="page"] {
-    background: rgba(15, 61, 46, 0.08);
+    background: var(--accent);
+    color: white;
 }
 
 .btn {
@@ -773,9 +1030,11 @@ nav a[aria-current="page"] {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 36px;
-    align-items: center;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-5);
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .hero h1 {
@@ -827,11 +1086,14 @@ section {
     margin: 0;
     font-family: "Fraunces", serif;
     font-size: clamp(1.7rem, 3vw, 2.5rem);
+    color: var(--accent-3);
 }
 
 .section-title p {
     max-width: 520px;
     color: var(--muted);
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .grid-3 {
@@ -1262,13 +1524,80 @@ footer {
     border-left: 4px solid var(--accent);
 }
 
-.vision-quote blockquote {
-    margin: 0;
-    font-size: 1.1rem;
-    font-style: italic;
+.news-articles {
+    display: grid;
+    gap: var(--space-5);
+    margin-top: var(--space-4);
+}
+
+.news-article {
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.news-article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(7, 16, 13, 0.15);
+}
+
+.news-article-head {
+    padding: var(--space-4);
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+}
+
+.news-article-head .news-card-date {
+    display: inline-block;
+    padding: var(--space-1) var(--space-2);
+    background: var(--accent-2);
     color: var(--accent-3);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+}
+
+.news-article-head h2 {
+    margin: 0 0 var(--space-2) 0;
+    font-family: "Fraunces", serif;
+    font-size: 1.8rem;
+    color: var(--accent-3);
+}
+
+.news-article-body {
+    padding: var(--space-4);
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-4);
+    align-items: start;
+}
+
+.news-article-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.news-article-content {
+    color: var(--muted);
     line-height: 1.6;
-    text-align: center;
+    white-space: pre-line;
+}
+
+@media (max-width: 768px) {
+    .news-article-body {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+    
+    .news-article-image {
+        height: 150px;
+    }
 }
 
 .reveal {
@@ -1376,6 +1705,23 @@ footer {
     .hero-grid,
     .split {
         grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .hero .card {
+        transform: none;
+        margin-top: var(--space-3);
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: var(--space-2);
+        font-size: 0.85rem;
+    }
+
+    nav a {
+        padding: 6px 10px;
+        font-size: 0.8rem;
     }
 
     .media-card {

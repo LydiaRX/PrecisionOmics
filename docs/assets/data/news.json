@@ -1,33 +1,33 @@
 [
   {
+    "id": "partnership-pakistan",
+    "date": "",
+    "category": "Call to Action",
+    "title": "PARTNERSHIP FOR A HEALTHIER PAKISTAN",
+    "excerpt": "LETS MAKE PAKISTAN HEALTHIER !",
+    "image": "assets/images/1000000100000357000003582875572145935276.png",
+    "content": "LETS MAKE PAKISTAN HEALTHIER !\n\nA transformative national initiative to establish a genomics ecosystem that improves disease prevention, diagnosis, and treatment equity across Pakistan.",
+    "linkText": "Call to Action"
+  },
+  {
     "id": "shared-vision",
     "date": "",
     "category": "Our Shared Vision",
     "title": "Our Shared Vision",
-    "excerpt": "\"A future where every Pakistani, regardless of geography or income, receives timely, precise, and world-class cancer care driven by their unique genetic profile.\"",
-    "image": "assets/images/10000001000003CA000002862F9CA95221529DFB.png",
+    "excerpt": "A future where every Pakistani receives world-class cancer care",
+    "image": "assets/images/100000000000032000000320AA131089C21CB39C.png",
     "content": "\"A future where every Pakistani, regardless of geography or income, receives timely, precise, and world-class cancer care driven by their unique genetic profile.\"",
     "linkText": "Our Shared Vision"
   },
   {
-    "id": "government-support-request",
+    "id": "government-support",
     "date": "",
     "category": "Government Support Request",
     "title": "Government Support Request",
     "excerpt": "Key Enablers for Success",
-    "image": "assets/images/100000000000032000000320AA131089C21CB39C.png",
-    "content": "Co-Sponsorship: Official endorsement of the 150,000+ WGS as a National Genome program Initiative\nPolicy Framework: Establishment of independent Governance & Ethical Board\nFunding: Public-private matching grant for infrastructure setup (Phase 1).",
+    "image": "assets/images/10000000000003F0000003F08616315ED53C215D.jpg",
+    "content": "Key Enablers for Success:\n\n• Co-Sponsorship: Official endorsement of the 150,000+ WGS as a National Genome program Initiative\n• Policy Framework: Establishment of independent Governance & Ethical Board\n• Funding: Public-private matching grant for infrastructure setup (Phase 1)\n• Ready for Immediate Implementation",
     "linkText": "Government Support Request"
-  },
-  {
-    "id": "ready-implementation",
-    "date": "",
-    "category": "Ready for Immediate Implementation",
-    "title": "Ready for Immediate Implementation",
-    "excerpt": "Ready for Immediate Implementation",
-    "image": "assets/images/10000000000003E2000004384C24E5621CD70E0C.jpg",
-    "content": "Site: site allocation for the infrastructure and Building",
-    "linkText": "Ready for Immediate Implementation"
   },
   {
     "id": "next-steps",
@@ -35,18 +35,18 @@
     "category": "Next Steps: 30-Day Plan",
     "title": "Next Steps: 30-Day Plan",
     "excerpt": "Roadmap to Launch",
-    "image": "assets/images/10000000000003F0000003F08616315ED53C215D.jpg",
-    "content": "Month 1: Constitute Joint Steering Committee (MoNHSRC + Precision Omics).\nMonth 1: Finalize Memorandum of Understanding (MoU).\nMonth 2: Site selection for National Genomic Center (Islamabad).\nMonth 2: Site Preparation\nMonth 3: Launch Phase 1 infrastructure development.",
+    "image": "assets/images/10000000000003E2000004384C24E5621CD70E0C.jpg",
+    "content": "Roadmap to Launch:\n\nMonth 1: Constitute Joint Steering Committee (MoNHSRC + Precision Omics)\nMonth 1: Finalize Memorandum of Understanding (MoU)\nMonth 2: Site selection for National Genomic Center (Islamabad)\nMonth 2: Site Preparation\nMonth 3: Launch Phase 1 infrastructure development",
     "linkText": "Next Steps: 30-Day Plan"
   },
   {
-    "id": "call-to-action",
+    "id": "ready-implementation",
     "date": "",
-    "category": "Call to Action",
-    "title": "Call to Action",
-    "excerpt": "Partnership for a Healthier Pakistan",
+    "category": "Ready for Implementation",
+    "title": "Ready for Immediate Implementation",
+    "excerpt": "Site allocation and infrastructure preparation",
     "image": "assets/images/1000000100000213000000FD5703F539BAD4BC9C.png",
-    "content": "LETS MAKE PAKISTAN HEALTHIER !",
-    "linkText": "Call to Action"
+    "content": "Ready for Immediate Implementation\n\nSite: site allocation for the infrastructure and Building\n\nInfrastructure setup and preparation ready to begin immediately upon government approval.",
+    "linkText": "Ready for Implementation"
   }
 ]

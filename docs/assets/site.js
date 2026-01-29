@@ -91,13 +91,14 @@ const renderNewsArticle = (item) => {
   const metaParts = [item.category, formatDate(item.date)].filter(Boolean);
   const meta = metaParts.join(" - ");
   return `
-    <article class="news-article" id="news-${escapeHtml(item.id)}">
+    <article class="news-article reveal" id="news-${escapeHtml(item.id)}">
       <div class="news-article-head">
-        ${meta ? `<span class=\"news-card-date\">${escapeHtml(meta)}</span>` : ""}
+        ${meta ? `<span class="news-card-date">${escapeHtml(meta)}</span>` : ""}
         <h2>${escapeHtml(item.title)}</h2>
       </div>
       <div class="news-article-body">
-        <p>${escapeHtml(item.content)}</p>
+        <img src="${escapeHtml(item.image || "")}" alt="${escapeHtml(item.title)}" class="news-article-image">
+        <div class="news-article-content">${escapeHtml(item.content)}</div>
       </div>
     </article>
   `;
