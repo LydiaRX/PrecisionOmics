@@ -13,15 +13,88 @@ const observer = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
 document.addEventListener("click", (event) => {
-  const button = event.target.closest("[data-team-toggle]");
+  const button = event.target.closest(".team-toggle");
+
+  // If a toggle button was clicked
   if (button) {
-    const card = button.closest(".team-card");
-    if (!card) return;
-    const expanded = card.classList.toggle("is-expanded");
-    button.textContent = expanded ? "-" : "+";
+    const cardToToggle = button.closest(".team-card");
+    if (!cardToToggle) return;
+    const isCurrentlyExpanded = cardToToggle.classList.contains("is-expanded");
+
+    // Close all other expanded cards and remove backdrop
+    document.querySelectorAll(".team-card.is-expanded").forEach(card => {
+      if (card !== cardToToggle) {
+        card.classList.remove("is-expanded");
+        const otherButton = card.querySelector(".team-toggle:not(.team-card--details .team-toggle)");
+        if (otherButton) {
+          otherButton.textContent = "Read more →";
+        }
+      }
+    });
+
+    // Handle backdrop
+    let backdrop = document.querySelector(".team-modal-backdrop");
+    if (!backdrop) {
+      backdrop = document.createElement("div");
+      backdrop.className = "team-modal-backdrop";
+      document.body.appendChild(backdrop);
+    }
+
+    // Toggle the clicked card
+    if (isCurrentlyExpanded) {
+      cardToToggle.classList.remove("is-expanded");
+      const mainButton = cardToToggle.querySelector(".team-toggle:not(.team-card--details .team-toggle)");
+      if (mainButton) {
+        mainButton.textContent = "Read more →";
+      }
+      backdrop.classList.remove("is-active");
+    } else {
+      cardToToggle.classList.add("is-expanded");
+      const mainButton = cardToToggle.querySelector(".team-toggle:not(.team-card--details .team-toggle)");
+      if (mainButton) {
+        mainButton.textContent = "Read less ←";
+      }
+      backdrop.classList.add("is-active");
+    }
+    
     return;
   }
 
+  // If clicked outside of any expanded card or on backdrop
+  const expandedCard = document.querySelector(".team-card.is-expanded");
+  const backdrop = document.querySelector(".team-modal-backdrop");
+  
+  if (expandedCard && (!expandedCard.contains(event.target) || (backdrop && backdrop.contains(event.target)))) {
+    expandedCard.classList.remove("is-expanded");
+    const mainButton = expandedCard.querySelector(".team-toggle:not(.team-card--details .team-toggle)");
+    if (mainButton) {
+      mainButton.textContent = "Read more →";
+    }
+    if (backdrop) {
+      backdrop.classList.remove("is-active");
+    }
+  }
+
+  // Handle modal close button clicks
+  const modalCloseButton = event.target.closest(".team-card--details .team-toggle");
+  if (modalCloseButton) {
+    const expandedCard = document.querySelector(".team-card.is-expanded");
+    const backdrop = document.querySelector(".team-modal-backdrop");
+    
+    if (expandedCard) {
+      expandedCard.classList.remove("is-expanded");
+      const mainButton = expandedCard.querySelector(".team-toggle:not(.team-card--details .team-toggle)");
+      if (mainButton) {
+        mainButton.textContent = "Read more →";
+      }
+    }
+    if (backdrop) {
+      backdrop.classList.remove("is-active");
+    }
+    return;
+  }
+
+  // Keep the group toggle logic for other potential uses
   const groupButton = event.target.closest("[data-team-group-toggle]");
   if (groupButton) {
     const group = groupButton.closest(".team-group");
@@ -41,15 +114,6 @@ document.addEventListener("click", (event) => {
       groupButton.textContent = "+";
     }
     return;
-  }
-
-  const expandedCard = document.querySelector(".team-card.is-expanded");
-  if (expandedCard && !expandedCard.contains(event.target)) {
-    expandedCard.classList.remove("is-expanded");
-    const toggleButton = expandedCard.querySelector("[data-team-toggle]");
-    if (toggleButton) {
-      toggleButton.textContent = "+";
-    }
   }
 });
 
@@ -119,7 +183,14 @@ const renderTeamCard = (member) => {
       <h4>${escapeHtml(member.name)}</h4>
       <p class="team-bio">${escapeHtml(member.bio_short)}</p>
       <p class="team-bio--full">${escapeHtml(member.bio_full)}</p>
-      <button class="team-toggle" data-team-toggle>+</button>
+      <button class="team-toggle" data-team-toggle>Read more →</button>
+      <div class="team-card--details">
+        ${avatar}
+        <div class="team-role">${escapeHtml(member.role)}</div>
+        <h4>${escapeHtml(member.name)}</h4>
+        <p class="team-bio--full">${escapeHtml(member.bio_full)}</p>
+        <button class="team-toggle">Read less ←</button>
+      </div>
     </article>
   `;
 };
