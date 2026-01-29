@@ -76,13 +76,16 @@ const renderNewsCard = (item) => {
   const metaParts = [item.category, formatDate(item.date)].filter(Boolean);
   const meta = metaParts.join(" - ");
   const linkText = item.linkText || item.title || "";
+  const linkHref = item.id ? `news.html#news-${escapeHtml(item.id)}` : "#";
   return `
     <article class="news-card">
-      <div class="news-card-media" style="background-image: url('${escapeHtml(item.image || "")}')"></div>
-      ${meta ? `<span class=\"news-card-date\">${escapeHtml(meta)}</span>` : ""}
-      <h4>${escapeHtml(item.title)}</h4>
-      <p>${escapeHtml(item.excerpt)}</p>
-      ${linkText ? `<a href=\"news.html#news-${escapeHtml(item.id)}\">${escapeHtml(linkText)}</a>` : ""}
+      <a href="${linkHref}" class="news-card-link">
+        <div class="news-card-media" style="background-image: url('${escapeHtml(item.image || "")}')"></div>
+        ${meta ? `<span class=\"news-card-date\">${escapeHtml(meta)}</span>` : ""}
+        <h4>${escapeHtml(item.title)}</h4>
+        <p>${escapeHtml(item.excerpt)}</p>
+        ${linkText ? `<span class="news-card-link-text">${escapeHtml(linkText)}</span>` : ""}
+      </a>
     </article>
   `;
 };
