@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
+
+:root {
+    --genomics-blue: #005EB8;
+    --genomics-light-blue: #E8F3F8;
+    --genomics-dark-blue: #003D66;
+    --genomics-teal: #00A19C;
+    --genomics-green: #006644;
+    --genomics-purple: #4C2C92;
+    --genomics-gray: #425563;
+    --genomics-light-gray: #F8FAFB;
+    --genomics-border: #D1DADD;
+    --genomics-accent: #FFB81C;
+    --genomics-red: #E84047;
+    --gradient-genomics: linear-gradient(135deg, var(--genomics-blue), var(--genomics-teal));
+    --gradient-hero: linear-gradient(180deg, #FFFFFF 0%, var(--genomics-light-gray) 100%);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0; padding: 0;
+    background: var(--genomics-light-gray);
+    font-family: "Inter", "Source Sans Pro", sans-serif;
+    line-height: 1.6;
+    color: var(--genomics-gray);
+}
+
+.container { width: min(1200px, 92vw); margin: 0 auto; }
+
+/* Hero - Genomics Style (Original Content) */
+.hero { 
+    padding: 90px 0 60px; 
+    background: var(--gradient-hero);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-genomics);
+}
+
+/* Remove unused hero styles */
+.hero-grid,
+.hero-urgent,
+.urgent-badge,
+.counter-number,
+.hero h1,
+.hero h2,
+.hero-value-proposition,
+.value-card,
+.value-icon,
+.cta-section,
+.cta-primary,
+.cta-secondary {
+    /* These styles are not needed for original content structure */
+}
+
+/* Remove unused sections */
+.problem-solution,
+.strategic-projects,
+.investment-opportunity {
+    /* These sections are not in original content */
+}
+
+/* Header & Navigation - Genomics Style */
+header {
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid var(--genomics-border);
+}
+
+.nav { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 16px 0; 
+}
+
+nav { 
+    display: flex; 
+    gap: 8px; 
+    font-size: 15px; 
+    font-weight: 500;
+}
+
+nav a {
+    padding: 8px 16px; 
+    border-radius: 4px;
+    transition: all 0.2s ease; 
+    white-space: nowrap;
+    color: var(--genomics-gray);
+}
+
+nav a:hover { 
+    background: var(--genomics-light-blue); 
+    color: var(--genomics-blue);
+}
+nav a[aria-current="page"] { 
+    background: var(--genomics-blue); 
+    color: white;
+}
+
+/* Reveal animation */
+.reveal { transform: translateY(30px); transition: all 0.6s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* Section Titles - Genomics Style */
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.section-title h2 {
+    margin: 0;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    color: var(--genomics-dark-blue);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.section-title p {
+    max-width: 520px;
+    color: var(--genomics-gray);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Cards - Genomics Style */
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 32px;
+    border: 1px solid var(--genomics-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Split Layout */
+.split {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+/* Media Card */
+.media-card {
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--genomics-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.media-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Team Section - Genomics Style */
+#team {
+    padding: 70px 0;
+    background: white;
+}
+
+.team-group {
+    margin-bottom: 48px;
+}
+
+.team-group-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.team-group-head h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--genomics-dark-blue);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* News Section - Genomics Style */
+#news.hero {
+    padding: 70px 0;
+    background: var(--genomics-light-gray);
+}
+
+.news-wrap {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.news-head h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--genomics-dark-blue);
+    margin-bottom: 24px;
+}
+
+.vision-quote {
+    background: white;
+    padding: 32px;
+    border-radius: 8px;
+    border-left: 4px solid var(--genomics-blue);
+    margin: 24px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.vision-quote blockquote {
+    margin: 0;
+    font-size: 1.125rem;
+    font-style: italic;
+    color: var(--genomics-gray);
+    line-height: 1.6;
+}
+
+.news-strip {
+    margin-top: 32px;
+}
+
+.news-empty {
+    text-align: center;
+    color: var(--genomics-gray);
+    padding: 24px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--genomics-border);
+}
+
+/* Contact Section - Genomics Style */
+#contact {
+    padding: 70px 0;
+    background: white;
+}
+
+.contact-info h3,
+.contact-action h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--genomics-dark-blue);
+    margin-bottom: 16px;
+}
+
+.contact-details {
+    margin-top: 16px;
+}
+
+.contact-details p {
+    margin: 8px 0;
+    color: var(--genomics-gray);
+}
+
+.contact-details strong {
+    color: var(--genomics-dark-blue);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--genomics-blue);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--genomics-dark-blue);
+    transform: translateY(-1px);
+}
+
+/* Footer */
+footer {
+    background: var(--genomics-dark-blue);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer .container {
+    font-weight: 500;
+}
+
+/* Logo */
+.logo-img {
+    height: 40px;
+    border-radius: 8px;
+}
+
+/* Responsive - Updated for original content */
+@media (max-width: 768px) {
+    .hero { 
+        padding: 60px 0 40px; 
+    }
+    .section-title {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+    .nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95vw;
+    }
+    .hero {
+        padding: 60px 0 40px;
+    }
+    .card, .project-card, .investment-card {
+        padding: 24px;
+    }
+    .value-card {
+        padding: 20px;
+    }
+}
