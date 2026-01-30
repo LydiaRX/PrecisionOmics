@@ -200,9 +200,61 @@ nav a[aria-current="page"] {
 }
 
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
     gap: 24px;
+    padding: 0 0 24px 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.team-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: visible;
+    padding: 0 24px;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--genomics-blue);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-nav:hover {
+    background: var(--genomics-dark-blue);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav.prev {
+    left: 0;
+}
+
+.carousel-nav.next {
+    right: 0;
+}
+
+.carousel-nav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
 }
 
 /* News Section - Genomics Style */
@@ -242,7 +294,18 @@ nav a[aria-current="page"] {
 }
 
 .news-strip {
+    display: flex;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    gap: 24px;
+    padding: 0 0 24px 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     margin-top: 32px;
+}
+
+.news-strip::-webkit-scrollbar {
+    display: none;
 }
 
 .news-empty {
@@ -336,7 +399,8 @@ footer .container {
         justify-content: center;
     }
     .team-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        overflow-x: hidden;
     }
 }
 
