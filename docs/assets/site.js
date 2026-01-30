@@ -27,7 +27,7 @@ document.addEventListener("click", (event) => {
         card.classList.remove("is-expanded");
         const otherButton = card.querySelector(".team-toggle:not(.team-card--details .team-toggle)");
         if (otherButton) {
-          otherButton.textContent = "Read more →";
+          otherButton.textContent = "+";
         }
       }
     });
@@ -45,14 +45,14 @@ document.addEventListener("click", (event) => {
       cardToToggle.classList.remove("is-expanded");
       const mainButton = cardToToggle.querySelector(".team-toggle:not(.team-card--details .team-toggle)");
       if (mainButton) {
-        mainButton.textContent = "Read more →";
+        mainButton.textContent = "+";
       }
       backdrop.classList.remove("is-active");
     } else {
       cardToToggle.classList.add("is-expanded");
       const mainButton = cardToToggle.querySelector(".team-toggle:not(.team-card--details .team-toggle)");
       if (mainButton) {
-        mainButton.textContent = "Read less ←";
+        mainButton.textContent = "-";
       }
       backdrop.classList.add("is-active");
     }
@@ -68,7 +68,7 @@ document.addEventListener("click", (event) => {
     expandedCard.classList.remove("is-expanded");
     const mainButton = expandedCard.querySelector(".team-toggle:not(.team-card--details .team-toggle)");
     if (mainButton) {
-      mainButton.textContent = "Read more →";
+      mainButton.textContent = "+";
     }
     if (backdrop) {
       backdrop.classList.remove("is-active");
@@ -85,7 +85,7 @@ document.addEventListener("click", (event) => {
       expandedCard.classList.remove("is-expanded");
       const mainButton = expandedCard.querySelector(".team-toggle:not(.team-card--details .team-toggle)");
       if (mainButton) {
-        mainButton.textContent = "Read more →";
+        mainButton.textContent = "+";
       }
     }
     if (backdrop) {
@@ -183,13 +183,13 @@ const renderTeamCard = (member) => {
       <h4>${escapeHtml(member.name)}</h4>
       <p class="team-bio">${escapeHtml(member.bio_short)}</p>
       <p class="team-bio--full">${escapeHtml(member.bio_full)}</p>
-      <button class="team-toggle" data-team-toggle>Read more →</button>
+      <button class="team-toggle" data-team-toggle>+</button>
       <div class="team-card--details">
         ${avatar}
         <div class="team-role">${escapeHtml(member.role)}</div>
         <h4>${escapeHtml(member.name)}</h4>
         <p class="team-bio--full">${escapeHtml(member.bio_full)}</p>
-        <button class="team-toggle">Read less ←</button>
+        <button class="team-toggle">-</button>
       </div>
     </article>
   `;

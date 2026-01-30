@@ -281,6 +281,9 @@ header {
     display: flex;
     justify-content: center;
     margin: var(--space-4) 0;
+    line-height: 1;
+    align-items: anchor-center;
+    gap: var(--space-1);
 }
 
 .success-stat {
@@ -665,7 +668,10 @@ header {
     margin: 0;
     opacity: 0.9;
 }
-
+.quote-source{
+    color: var(--card) !important;
+    font-size: var(--text-sm) !important;
+}
 /* Expected Outcomes Styles */
 .outcomes-grid {
     display: grid;
@@ -1044,6 +1050,7 @@ nav a[aria-current="page"] {
     align-items: start;
     max-width: 1200px;
     margin: 0 auto;
+    padding: var(--space-5);
 }
 
 .hero h1 {
@@ -1058,7 +1065,6 @@ nav a[aria-current="page"] {
 .hero p {
     font-size: var(--text-lg);
     color: var(--muted);
-    max-width: 540px;
     line-height: var(--line-height-relaxed);
 }
 
@@ -1126,6 +1132,7 @@ section {
     box-shadow: 0 12px 28px rgba(10, 30, 22, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: -webkit-fill-available;
+    text-align: justify;
 }
 
 .card:hover {
@@ -1630,8 +1637,7 @@ footer {
     width: 100%;
     height: 140px;
     border-radius: 14px;
-    background: #e2ddd1 center/cover no-repeat;
-    border: 1px solid var(--line);
+    background: center/contain no-repeat;
 }
 
 .news-card-date {
@@ -1747,7 +1753,7 @@ footer {
 .news-article-image {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
 }
