@@ -2,9 +2,12 @@
   const STYLE_VARIANT_PARAM = "design";
   const STYLE_VARIANT_KEY = "precision-omics-style-variant";
   const VARIANT_ALIASES = {
+    "variant-a": "variant-a",
+    a: "variant-a",
     "variant-b": "variant-b",
     b: "variant-b",
-    genomics: "genomics",
+    "variant-c": "variant-c",
+    c: "variant-c",
     default: "default",
   };
   const VALID_VARIANTS = new Set(Object.values(VARIANT_ALIASES));
@@ -62,7 +65,7 @@
 
     const link = document.createElement("link");
     link.rel = "stylesheet";
-    const suffix = variant === "variant-b" ? "b" : variant;
+    const suffix = variant === "variant-b" ? "b" : variant === "variant-c" ? "c" : variant === "variant-a" ? "a" : variant;
     link.href = `assets/styles-variant-${suffix}.css`;
     link.setAttribute("data-style-variant", variant);
     document.head.appendChild(link);
