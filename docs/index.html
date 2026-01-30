@@ -19,7 +19,7 @@
         <div class="logo">
             <img src="assets/images/precision-omics-icon.png" alt="Precision Omics Logo" class="logo-img"/>
         </div>
-        <nav><a href="index.html" aria-current="page">Home</a><a href="program.html">Program Details</a><a href="#team">Team</a><a
+        <nav><a href="index.html" aria-current="page">Home</a><a href="#team">Team</a><a
                 href="#news">News</a><a
                 href="#contact">Contact</a></nav>
     </div>
@@ -60,15 +60,22 @@
         <div class="section-title reveal"><h2>Our Team</h2></div>
         <div id="lydiarx-team" class="team-group">
             <div class="team-group-head reveal"><h3>LydiaRX</h3>
-
             </div>
-            <div class="team-grid">
+            <div class="carousel-container">
+                <div class="team-grid">
+                </div>
+                <button class="carousel-nav prev" onclick="scrollCarousel('lydiarx-team', -1)">‹</button>
+                <button class="carousel-nav next" onclick="scrollCarousel('lydiarx-team', 1)">›</button>
             </div>
         </div>
         <div id="premium-team" class="team-group">
             <div class="team-group-head reveal"><h3>Premium Lab (Pakistan) </h3>
             </div>
-            <div class="team-grid">
+            <div class="carousel-container">
+                <div class="team-grid">
+                </div>
+                <button class="carousel-nav prev" onclick="scrollCarousel('premium-team', -1)">‹</button>
+                <button class="carousel-nav next" onclick="scrollCarousel('premium-team', 1)">›</button>
             </div>
         </div>
     </div>
@@ -85,7 +92,11 @@
             </div>
             <p>Stay informed about the latest developments in the Precision Omics initiative.</p></div>
 
-        <div class="news-strip" id="news-strip"><p class="news-empty">No news available.</p></div>
+        <div class="carousel-container">
+            <div class="news-strip" id="news-strip"><p class="news-empty">No news available.</p></div>
+            <button class="carousel-nav prev" onclick="scrollCarousel('news-strip', -1)">‹</button>
+            <button class="carousel-nav next" onclick="scrollCarousel('news-strip', 1)">›</button>
+        </div>
     </div>
     </div>
 </section>

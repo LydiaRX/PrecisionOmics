@@ -13,107 +13,22 @@ const observer = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
 document.addEventListener("click", (event) => {
-  const button = event.target.closest(".team-toggle");
-
-  // If a toggle button was clicked
-  if (button) {
-    const cardToToggle = button.closest(".team-card");
-    if (!cardToToggle) return;
-    const isCurrentlyExpanded = cardToToggle.classList.contains("is-expanded");
-
-    // Close all other expanded cards and remove backdrop
-    document.querySelectorAll(".team-card.is-expanded").forEach(card => {
-      if (card !== cardToToggle) {
-        card.classList.remove("is-expanded");
-        const otherButton = card.querySelector(".team-toggle:not(.team-card--details .team-toggle)");
-        if (otherButton) {
-          otherButton.textContent = "+";
-        }
+  // Close if clicked outside any team details
+  const clickedDetails = event.target.closest('.team-card--details');
+  const clickedCard = event.target.closest('.team-card');
+  
+  if (!clickedDetails && !clickedCard) {
+    // Hide all details
+    document.querySelectorAll('.team-card--details').forEach(detail => {
+      detail.style.display = 'none';
+    });
+    
+    // Reset all buttons
+    document.querySelectorAll('.team-toggle').forEach(btn => {
+      if (btn.textContent === '-') {
+        btn.textContent = '+';
       }
     });
-
-    // Handle backdrop
-    let backdrop = document.querySelector(".team-modal-backdrop");
-    if (!backdrop) {
-      backdrop = document.createElement("div");
-      backdrop.className = "team-modal-backdrop";
-      document.body.appendChild(backdrop);
-    }
-
-    // Toggle the clicked card
-    if (isCurrentlyExpanded) {
-      cardToToggle.classList.remove("is-expanded");
-      const mainButton = cardToToggle.querySelector(".team-toggle:not(.team-card--details .team-toggle)");
-      if (mainButton) {
-        mainButton.textContent = "+";
-      }
-      backdrop.classList.remove("is-active");
-    } else {
-      cardToToggle.classList.add("is-expanded");
-      const mainButton = cardToToggle.querySelector(".team-toggle:not(.team-card--details .team-toggle)");
-      if (mainButton) {
-        mainButton.textContent = "-";
-      }
-      backdrop.classList.add("is-active");
-    }
-    
-    return;
-  }
-
-  // If clicked outside of any expanded card or on backdrop
-  const expandedCard = document.querySelector(".team-card.is-expanded");
-  const backdrop = document.querySelector(".team-modal-backdrop");
-  
-  if (expandedCard && (!expandedCard.contains(event.target) || (backdrop && backdrop.contains(event.target)))) {
-    expandedCard.classList.remove("is-expanded");
-    const mainButton = expandedCard.querySelector(".team-toggle:not(.team-card--details .team-toggle)");
-    if (mainButton) {
-      mainButton.textContent = "+";
-    }
-    if (backdrop) {
-      backdrop.classList.remove("is-active");
-    }
-  }
-
-  // Handle modal close button clicks
-  const modalCloseButton = event.target.closest(".team-card--details .team-toggle");
-  if (modalCloseButton) {
-    const expandedCard = document.querySelector(".team-card.is-expanded");
-    const backdrop = document.querySelector(".team-modal-backdrop");
-    
-    if (expandedCard) {
-      expandedCard.classList.remove("is-expanded");
-      const mainButton = expandedCard.querySelector(".team-toggle:not(.team-card--details .team-toggle)");
-      if (mainButton) {
-        mainButton.textContent = "+";
-      }
-    }
-    if (backdrop) {
-      backdrop.classList.remove("is-active");
-    }
-    return;
-  }
-
-  // Keep the group toggle logic for other potential uses
-  const groupButton = event.target.closest("[data-team-group-toggle]");
-  if (groupButton) {
-    const group = groupButton.closest(".team-group");
-    if (!group) return;
-    const hiddenCards = group.querySelectorAll(".team-card.is-hidden");
-    const isHidden = hiddenCards.length > 0;
-
-    if (isHidden) {
-      group.querySelectorAll('.team-card[data-overflow="true"]').forEach((card) => {
-        card.classList.remove("is-hidden");
-      });
-      groupButton.textContent = "-";
-    } else {
-      group.querySelectorAll('.team-card[data-overflow="true"]').forEach((card) => {
-        card.classList.add("is-hidden");
-      });
-      groupButton.textContent = "+";
-    }
-    return;
   }
 });
 
@@ -176,22 +91,34 @@ const renderTeamCard = (member) => {
     ? `<img class="team-avatar" src="assets/images/team/${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}">`
     : `<div class="team-avatar team-placeholder" data-initials="${escapeHtml(member.initials)}"></div>`;
 
+  const cardId = `team-${escapeHtml(member.name).toLowerCase().replace(/\s+/g, '-')}`;
+
   return `
-    <article class="team-card reveal">
+    <article class="team-card reveal" data-member-id="${cardId}">
       ${avatar}
       <div class="team-role">${escapeHtml(member.role)}</div>
       <h4>${escapeHtml(member.name)}</h4>
       <p class="team-bio">${escapeHtml(member.bio_short)}</p>
-      <p class="team-bio--full">${escapeHtml(member.bio_full)}</p>
-      <button class="team-toggle" data-team-toggle>+</button>
-      <div class="team-card--details">
-        ${avatar}
-        <div class="team-role">${escapeHtml(member.role)}</div>
-        <h4>${escapeHtml(member.name)}</h4>
-        <p class="team-bio--full">${escapeHtml(member.bio_full)}</p>
-        <button class="team-toggle">-</button>
-      </div>
+      <button class="team-toggle" onclick="toggleTeamDetails('${cardId}')">+</button>
     </article>
+  `;
+};
+
+const renderTeamDetails = (member) => {
+  const avatar = member.image
+    ? `<img class="team-avatar" src="assets/images/team/${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}">`
+    : `<div class="team-avatar team-placeholder" data-initials="${escapeHtml(member.initials)}"></div>`;
+
+  const cardId = `team-${escapeHtml(member.name).toLowerCase().replace(/\s+/g, '-')}`;
+
+  return `
+    <div class="team-card--details" id="${cardId}" style="display: none;">
+      ${avatar}
+      <div class="team-role">${escapeHtml(member.role)}</div>
+      <h4>${escapeHtml(member.name)}</h4>
+      <p class="team-bio--full">${escapeHtml(member.bio_full)}</p>
+      <button class="team-toggle" onclick="toggleTeamDetails('${cardId}')">×</button>
+    </div>
   `;
 };
 
@@ -227,6 +154,27 @@ const initNewsPage = (items) => {
   list.innerHTML = items.map(renderNewsArticle).join("");
 };
 
+const toggleTeamDetails = (cardId) => {
+  const details = document.getElementById(cardId);
+  if (!details) return;
+  
+  // Hide all other details
+  document.querySelectorAll('.team-card--details').forEach(detail => {
+    if (detail.id !== cardId) {
+      detail.style.display = 'none';
+    }
+  });
+  
+  // Toggle current details
+  const isVisible = details.style.display === 'block';
+  details.style.display = isVisible ? 'none' : 'block';
+  
+  // Update button text
+  document.querySelectorAll(`[data-member-id="${cardId}"] .team-toggle`).forEach(btn => {
+    btn.textContent = isVisible ? '+' : '-';
+  });
+};
+
 const initTeam = (team) => {
   const lydiaRxGrid = document.querySelector("#lydiarx-team .team-grid");
   const premiumGrid = document.querySelector("#premium-team .team-grid");
@@ -234,13 +182,107 @@ const initTeam = (team) => {
   if (lydiaRxGrid) {
     const lydiaRxMembers = team.filter(m => m.group === "LydiaRX");
     lydiaRxGrid.innerHTML = lydiaRxMembers.map(renderTeamCard).join("");
+    
+    // Add details container after the grid
+    const lydiaRxDetails = document.createElement('div');
+    lydiaRxDetails.className = 'team-details-container';
+    lydiaRxDetails.innerHTML = lydiaRxMembers.map(renderTeamDetails).join("");
+    lydiaRxGrid.parentNode.appendChild(lydiaRxDetails);
   }
 
   if (premiumGrid) {
     const premiumMembers = team.filter(m => m.group === "Premium");
     premiumGrid.innerHTML = premiumMembers.map(renderTeamCard).join("");
+    
+    // Add details container after the grid
+    const premiumDetails = document.createElement('div');
+    premiumDetails.className = 'team-details-container';
+    premiumDetails.innerHTML = premiumMembers.map(renderTeamDetails).join("");
+    premiumGrid.parentNode.appendChild(premiumDetails);
   }
 };
+
+const scrollCarousel = (containerId, direction) => {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  
+  let grid;
+  if (containerId === 'news-strip') {
+    grid = container; // news-strip is the direct element
+  } else {
+    grid = container.querySelector('.team-grid');
+  }
+  
+  if (!grid) return;
+  
+  const cardWidth = 280 + parseInt(getComputedStyle(grid).gap);
+  const scrollAmount = cardWidth * direction;
+  
+  grid.scrollBy({
+    left: scrollAmount,
+    behavior: 'smooth'
+  });
+  
+  // Update button states
+  setTimeout(() => updateCarouselButtons(containerId), 300);
+};
+
+const updateCarouselButtons = (containerId) => {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  
+  let grid;
+  if (containerId === 'news-strip') {
+    grid = container; // news-strip is the direct element
+  } else {
+    grid = container.querySelector('.team-grid');
+  }
+  
+  if (!grid) return;
+  
+  let prevBtn, nextBtn;
+  if (containerId === 'news-strip') {
+    // For news-strip, buttons are siblings of the carousel container
+    const carouselContainer = container.closest('.carousel-container');
+    prevBtn = carouselContainer?.querySelector('.carousel-nav.prev');
+    nextBtn = carouselContainer?.querySelector('.carousel-nav.next');
+  } else {
+    // For team grids, buttons are inside the container
+    prevBtn = container.querySelector('.carousel-nav.prev');
+    nextBtn = container.querySelector('.carousel-nav.next');
+  }
+  
+  if (prevBtn) {
+    prevBtn.classList.toggle('disabled', grid.scrollLeft <= 0);
+  }
+  
+  if (nextBtn) {
+    const isAtEnd = grid.scrollLeft >= grid.scrollWidth - grid.clientWidth - 10;
+    nextBtn.classList.toggle('disabled', isAtEnd);
+  }
+};
+
+// Initialize carousel button states
+document.addEventListener('DOMContentLoaded', () => {
+  const carousels = ['lydiarx-team', 'premium-team', 'news-strip'];
+  carousels.forEach(id => {
+    const container = document.getElementById(id);
+    if (container) {
+      let grid;
+      if (id === 'news-strip') {
+        grid = container; // news-strip is the direct element
+      } else {
+        grid = container.querySelector('.team-grid');
+      }
+      
+      if (grid) {
+        grid.addEventListener('scroll', () => updateCarouselButtons(id));
+        // Initial button state
+        setTimeout(() => updateCarouselButtons(id), 100);
+      }
+    }
+  });
+});
 
 loadNews()
   .then((items) => {
