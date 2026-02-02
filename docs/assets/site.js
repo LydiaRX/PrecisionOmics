@@ -112,8 +112,11 @@ const renderTeamDetails = (member) => {
       ${avatar}
       <div class="team-role">${escapeHtml(member.role)}</div>
       <h4>${escapeHtml(member.name)}</h4>
-      <p class="team-bio--full">${escapeHtml(member.bio_full)}</p>
+      <div class="srollable-container">     
+       <p class="team-bio--full">${escapeHtml(member.bio_full)}</p>
+      </div>
       <button class="team-toggle" onclick="toggleTeamDetails('${cardId}')">×</button>
+
     </div>
   `;
 };
@@ -167,7 +170,7 @@ const toggleTeamDetails = (cardId) => {
   });
 
   // Toggle current details
-  details.style.display = isVisible ? 'none' : 'block';
+  details.style.display = isVisible ? 'none' : 'flex';
   
   // Update current card button text
   document.querySelectorAll(`[data-member-id="${cardId}"] .team-toggle`).forEach(btn => {
