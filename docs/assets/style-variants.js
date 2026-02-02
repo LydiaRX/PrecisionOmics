@@ -10,7 +10,9 @@
     c: "variant-c",
     "variant-d": "variant-d",
     d: "variant-d",
-    default: "default",
+    "variant-e": "variant-e",
+    e: "variant-e",
+    default: "variant-e",
   };
   const VALID_VARIANTS = new Set(Object.values(VARIANT_ALIASES));
 
@@ -48,7 +50,7 @@
   const writeVariantToStorage = (variant) => safeLocalStorage.setItem(STYLE_VARIANT_KEY, variant);
 
   const applyVariantMetadata = (variant) => {
-    const resolved = variant || "default";
+    const resolved = variant || "variant-a";
     if (document?.documentElement) {
       document.documentElement.setAttribute("data-style-variant", resolved);
     }
@@ -61,7 +63,7 @@
       existing.remove();
     }
 
-    if (!variant || variant === "default") {
+    if (!variant || variant === "variant-e") {
       return;
     }
 
@@ -84,7 +86,7 @@
   }
 
   if (!variant) {
-    variant = "default";
+    variant = "variant-a";
   }
 
   applyVariantMetadata(variant);
