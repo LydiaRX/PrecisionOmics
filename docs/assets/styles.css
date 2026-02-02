@@ -1643,7 +1643,10 @@ footer {
     color: var(--muted);
     border-top: 1px solid var(--line);
 }
-
+.hero-container{
+    display: flex;
+    gap: var(--space-4);
+}
 .news-wrap {
     background: var(--news-bg);
     border-radius: 26px;
