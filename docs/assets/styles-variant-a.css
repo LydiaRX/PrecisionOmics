@@ -51,7 +51,45 @@ header {
 }
 
 .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
     padding: 22px 0;
+}
+
+nav {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.nav-toggle {
+    display: none;
+    background: transparent;
+    color: var(--accent-3);
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-toggle::before {
+    content: "";
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor;
+    display: inline-block;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
 }
 
 nav a {
@@ -68,6 +106,31 @@ nav a:hover,
 nav a[aria-current="page"] {
     background: rgba(0, 94, 184, 0.12);
     color: var(--accent-3);
+}
+
+/* Icon-based logo system for theme A using animated GIF */
+.icon.icon--logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    white-space: nowrap;
+    color: var(--accent-3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: var(--font-display);
+}
+
+.icon.icon--logo .logo-gif {
+    width: 36px;
+    height: 36px;
+    display: block;
+}
+
+.icon.icon--logo .logo-text {
+    font-size: 0.95rem;
+    line-height: 1;
 }
 
 .logo-img {
@@ -211,5 +274,57 @@ footer {
     nav a {
         font-size: 0.7rem;
         padding: 6px 10px;
+    }
+
+    .nav {
+        position: relative;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+        margin-left: auto;
+    }
+
+    .site-nav {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding: 12px;
+        background: white;
+        border: 1px solid rgba(43, 47, 59, 0.12);
+        border-radius: 14px;
+        box-shadow: 0 14px 28px rgba(43, 47, 59, 0.12);
+        z-index: 20;
+    }
+
+    .site-nav.is-open {
+        display: flex;
+    }
+
+    .site-nav a {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .icon.icon--logo {
+        gap: 8px;
+    }
+
+    .icon.icon--logo .logo-gif {
+        width: 28px;
+        height: 28px;
+    }
+
+    .icon.icon--logo .logo-text {
+        font-size: 0.8rem;
+        letter-spacing: 0.06em;
     }
 }

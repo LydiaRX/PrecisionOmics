@@ -18,10 +18,6 @@
 
 /* Icon-based logo system for theme B using animated GIF */
 .icon.icon--logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: fit-content;
     color: var(--genomics-dark-blue);
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -112,6 +108,42 @@ nav {
     gap: 8px; 
     font-size: 15px; 
     font-weight: 500;
+}
+
+.nav-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: var(--genomics-dark-blue);
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-toggle::before {
+    content: "";
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor;
+    display: inline-block;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-left: auto;
+    flex-wrap: nowrap;
+}
+
+.site-nav a {
+    padding: 8px 12px;
+    font-size: 0.78rem;
 }
 
 nav a {
@@ -414,17 +446,87 @@ footer .container {
         text-align: center;
         gap: 16px;
     }
-    .nav {
-        flex-direction: column;
-        gap: 12px;
-    }
+
     nav {
         flex-wrap: wrap;
         justify-content: center;
     }
+    .nav {
+        position: relative;
+        align-items: stretch;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+        align-self: flex-end;
+    }
+
+    .site-nav {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding: 12px;
+        background: white;
+        border: 1px solid var(--genomics-border);
+        border-radius: 12px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        z-index: 20;
+    }
+
+    .site-nav.is-open {
+        display: flex;
+    }
+
+    .site-nav a {
+        display: block;
+    }
     .team-grid {
         flex-direction: column;
         overflow-x: hidden;
+    }
+
+    .carousel-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .carousel-nav {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+
+    .carousel-nav.prev {
+        left: 6px;
+    }
+
+    .carousel-nav.next {
+        right: 6px;
+    }
+
+    .team-grid,
+    .news-strip {
+        width: 82vw;
+        max-width: 82vw;
+        margin: 0 auto;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 0;
+        padding: 12px 0 24px;
+        gap: 0;
+        justify-content: flex-start;
+    }
+
+    .team-card,
+    .news-card {
+        flex: 0 0 85vw;
+        max-width: 85vw;
+        scroll-snap-align: center;
     }
 }
 
@@ -440,5 +542,34 @@ footer .container {
     }
     .value-card {
         padding: 20px;
+    }
+
+    .icon.icon--logo {
+        gap: 8px;
+        width: fit-content;
+    }
+
+    .icon.icon--logo .logo-gif {
+        width: 28px;
+        height: 28px;
+    }
+
+    .icon.icon--logo .logo-text {
+        font-size: 0.8rem;
+        letter-spacing: 0.06em;
+    }
+
+    .team-grid,
+    .news-strip {
+        width: 88vw;
+        max-width: 88vw;
+        padding-inline: 0;
+        scroll-padding: 0;
+    }
+
+    .team-card,
+    .news-card {
+        flex-basis: 85vw;
+        max-width: 85vw;
     }
 }
