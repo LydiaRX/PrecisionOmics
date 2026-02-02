@@ -1516,6 +1516,7 @@ section {
 
 .team-card--details .team-bio--full {
     display: block;
+    text-align: justify;
 }
 
 .team-bio--full {

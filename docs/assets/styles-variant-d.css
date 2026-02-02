@@ -719,13 +719,8 @@ footer strong {
     }
     
     .team-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .team-card {
-        width: 100%;
-        max-width: 350px;
+        flex-direction: row;
+        align-items: stretch;
     }
 
     .carousel-container {
@@ -791,4 +786,10 @@ footer strong {
         flex-basis: 88vw;
         max-width: 88vw;
     }
+}
+
+/* Team details text alignment */
+.team-card--details .team-bio--full,
+.team-bio--full {
+    text-align: justify;
 }

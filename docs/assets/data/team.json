@@ -97,14 +97,5 @@
     "image": "muhammd-zahid.png",
     "bio_short": "Pakistani human geneticist and molecular biologist.",
     "bio_full": "Dr. Muhammad Zahid is a Pakistani human geneticist and molecular biologist. He holds a PhD in Human/Medical Genetics from Quaid-i-Azam University, Islamabad. He practices as a Geneticist, offering consultations on genetic disorders, prenatal screening, genetic counselling, inherited conditions, rare genetic disorders, and genomic testing. With expertise in NGS (Next-Generation Sequencing) applications and molecular techniques."
-  },
-  {
-    "id": "ms-areej",
-    "group": "Premium",
-    "name": "Ms Areej",
-    "role": "International Relation Officer",
-    "image": "ms-areej.png",
-    "bio_short": "International Relation Officer",
-    "bio_full": "Ms Areej"
   }
 ]

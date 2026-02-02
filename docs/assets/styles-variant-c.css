@@ -2112,3 +2112,9 @@ nav a:focus,
     0% { left: -100%; }
     100% { left: 100%; }
 }
+
+/* Team details text alignment */
+.team-card--details .team-bio--full,
+.team-bio--full {
+    text-align: justify;
+}

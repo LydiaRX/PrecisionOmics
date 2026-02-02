@@ -227,6 +227,7 @@ nav a[aria-current="page"] {
 .team-bio--full {
     background: rgba(240, 246, 251, 0.9);
     border-left: 3px solid var(--accent);
+    text-align: justify;
 }
 
 .news-wrap {

@@ -23,11 +23,9 @@ document.addEventListener("click", (event) => {
       detail.style.display = 'none';
     });
     
-    // Reset all buttons
-    document.querySelectorAll('.team-toggle').forEach(btn => {
-      if (btn.textContent === '-') {
-        btn.textContent = '+';
-      }
+    // Reset all card buttons
+    document.querySelectorAll('.team-card .team-toggle').forEach(btn => {
+      btn.textContent = '+';
     });
   }
 });
@@ -156,18 +154,22 @@ const toggleTeamDetails = (cardId) => {
   const details = document.getElementById(cardId);
   if (!details) return;
   
-  // Hide all other details
-  document.querySelectorAll('.team-card--details').forEach(detail => {
-    if (detail.id !== cardId) {
-      detail.style.display = 'none';
-    }
-  });
-  
-  // Toggle current details
   const isVisible = details.style.display === 'block';
+
+  // Hide all details
+  document.querySelectorAll('.team-card--details').forEach(detail => {
+    detail.style.display = 'none';
+  });
+
+  // Reset all card buttons
+  document.querySelectorAll('.team-card .team-toggle').forEach(btn => {
+    btn.textContent = '+';
+  });
+
+  // Toggle current details
   details.style.display = isVisible ? 'none' : 'block';
   
-  // Update button text
+  // Update current card button text
   document.querySelectorAll(`[data-member-id="${cardId}"] .team-toggle`).forEach(btn => {
     btn.textContent = isVisible ? '+' : '-';
   });

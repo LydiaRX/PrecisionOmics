@@ -486,8 +486,8 @@ footer .container {
         display: block;
     }
     .team-grid {
-        flex-direction: column;
-        overflow-x: hidden;
+        flex-direction: row;
+        overflow-x: auto;
     }
 
     .carousel-container {
@@ -572,4 +572,10 @@ footer .container {
         flex-basis: 85vw;
         max-width: 85vw;
     }
+}
+
+/* Team details text alignment */
+.team-card--details .team-bio--full,
+.team-bio--full {
+    text-align: justify;
 }
