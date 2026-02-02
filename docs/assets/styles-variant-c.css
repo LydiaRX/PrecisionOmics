@@ -1032,7 +1032,6 @@ nav a:focus,
     padding: 0.5rem 1rem;
     background: var(--gradient-accent);
     color: var(--text-primary);
-    border-radius: var(--radius-full);
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
