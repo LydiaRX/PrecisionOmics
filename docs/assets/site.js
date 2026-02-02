@@ -157,7 +157,7 @@ const toggleTeamDetails = (cardId) => {
   const details = document.getElementById(cardId);
   if (!details) return;
   
-  const isVisible = details.style.display === 'block';
+  const isVisible = details.style.display === 'flex';
 
   // Hide all details
   document.querySelectorAll('.team-card--details').forEach(detail => {
