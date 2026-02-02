@@ -1,5 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap");
 
+/* Icon-based logo system using optimized JPG */
+.icon.icon--logo {
+    display: block;
+    width: 180px;
+    height: 36px;
+    background: url("./logo1-transparent.png") center no-repeat;
+    background-size: contain;
+    opacity: 0.95;
+    object-fit: contain;
+}
+
+/* Theme variants for logo */
+body.theme-b .icon.icon--logo {
+    color: #005eb8;
+}
+
+body.theme-c .icon.icon--logo {
+    color: #9c27b0;
+}
+
+/* Hide old logo styles */
+.logo,
+.logo-img {
+    display: none !important;
+}
+
 :root {
     --bg: #f6f4ed;
     --bg-deep: #e9e4d7;

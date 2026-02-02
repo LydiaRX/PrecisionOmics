@@ -16,6 +16,23 @@
     --gradient-hero: linear-gradient(180deg, #FFFFFF 0%, var(--genomics-light-gray) 100%);
 }
 
+/* Icon-based logo system for theme B using optimized JPG */
+.icon.icon--logo {
+    display: block;
+    width: 180px;
+    height: 36px;
+    background: url("./logo1-transparent.png") center no-repeat;
+    background-size: contain;
+    opacity: 0.95;
+    object-fit: contain;
+}
+
+/* Hide old logo styles */
+.logo,
+.logo-img {
+    display: none !important;
+}
+
 * { box-sizing: border-box; }
 
 body {
