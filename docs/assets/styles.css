@@ -143,7 +143,7 @@ header {
 .nav-toggle {
     display: none;
     border: none;
-    background:transparent;
+    background: transparent;
     color: var(--ink);
     padding: 8px 12px;
     font-size: 0.75rem;
@@ -1643,10 +1643,16 @@ footer {
     color: var(--muted);
     border-top: 1px solid var(--line);
 }
-.hero-container{
+
+.justify-txt {
+    text-align: justify;
+}
+
+.hero-container {
     display: flex;
     gap: var(--space-4);
 }
+
 .news-wrap {
     background: var(--news-bg);
     border-radius: 26px;
