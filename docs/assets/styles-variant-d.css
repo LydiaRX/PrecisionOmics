@@ -11,32 +11,32 @@
     --accent-dark: #C0392B;
     --warning: #F39C12;
     --success: #27AE60;
-    
+
     /* Light Theme Colors - Genomics England Style */
     --bg-primary: #FFFFFF;
     --bg-secondary: #F8F9FA;
     --bg-tertiary: #F1F3F4;
     --bg-card: #FFFFFF;
     --bg-hover: #F5F7F8;
-    
+
     /* Text Colors - Genomics England Style */
     --text-primary: #2A2E3A; /* Dark gray text */
     --text-secondary: #5A616E;
     --text-muted: #8A92A2;
     --text-accent: var(--primary);
-    
+
     /* Borders & Lines - Genomics England Style */
     --border-primary: #E1E4E8;
     --border-secondary: #D1D5DA;
     --border-accent: var(--primary);
-    
+
     /* Gradients - Subtle Professional */
     --gradient-primary: linear-gradient(135deg, #0E3A5E 0%, #1E4F7E 100%);
     --gradient-secondary: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
     --gradient-dark: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%);
     --gradient-card: linear-gradient(135deg, #FFFFFF 0%, #F5F7F8 100%);
     --gradient-accent: linear-gradient(90deg, #0E3A5E, #4A90E2);
-    
+
     /* Shadows - Professional Subtle */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -44,7 +44,7 @@
     --shadow-xl: 0 16px 40px rgba(0, 0, 0, 0.15);
     --shadow-glow: 0 0 20px rgba(14, 58, 94, 0.15);
     --shadow-glow-primary: 0 0 30px rgba(14, 58, 94, 0.2);
-    
+
     /* Border Radius - Professional */
     --radius-sm: 4px;
     --radius-md: 6px;
@@ -52,12 +52,12 @@
     --radius-xl: 12px;
     --radius-2xl: 16px;
     --radius-full: 50%;
-    
+
     /* Typography - Genomics England Style */
     --font-primary: "Montserrat", system-ui, -apple-system, sans-serif;
     --font-display: "Montserrat", var(--font-primary);
     --font-mono: "Open Sans", monospace;
-    
+
     /* Spacing - Professional */
     --space-xs: 0.25rem;
     --space-sm: 0.5rem;
@@ -151,7 +151,7 @@ nav {
 
 .nav-toggle {
     display: none;
-    background:transparent;
+    background: transparent;
     color: var(--primary);
     padding: 8px 12px;
     font-size: 0.75rem;
@@ -318,6 +318,10 @@ nav a[aria-current="page"] {
     font-weight: 400;
     line-height: 1.6;
     margin: 0;
+}
+
+.carousel-nav:hover {
+    background: var(--primary);
 }
 
 /* Cards - Genomics England Style */
@@ -548,7 +552,7 @@ section {
 }
 
 .vision-quote::before {
-    content: '''';
+    content: '' '';
     position: absolute;
     top: -10px;
     left: 20px;
@@ -661,7 +665,7 @@ footer strong {
         gap: 1rem;
         padding: 1rem 0;
     }
-    
+
     nav {
         flex-wrap: wrap;
         justify-content: center;
@@ -701,23 +705,23 @@ footer strong {
     .site-nav a {
         display: block;
     }
-    
+
     .hero-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
         padding: 2rem;
     }
-    
+
     .section-title {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
     }
-    
+
     .section-title::after {
         display: none;
     }
-    
+
     .team-grid {
         flex-direction: row;
         align-items: stretch;
@@ -732,9 +736,6 @@ footer strong {
         width: 32px;
         height: 32px;
         font-size: 16px;
-    }
-    .carousel-nav:hover {
-        background: var(--primary);
     }
 
     .carousel-nav.prev {
