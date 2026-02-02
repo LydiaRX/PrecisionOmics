@@ -16,15 +16,22 @@
     --gradient-hero: linear-gradient(180deg, #FFFFFF 0%, var(--genomics-light-gray) 100%);
 }
 
-/* Icon-based logo system for theme B using optimized JPG */
+/* Icon-based logo system for theme B using animated GIF */
 .icon.icon--logo {
-    display: block;
-    width: 180px;
-    height: 36px;
-    background: url("./logo1-transparent.png") center no-repeat;
-    background-size: contain;
-    opacity: 0.95;
-    object-fit: contain;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    color: var(--genomics-dark-blue);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.icon.icon--logo .logo-text {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1;
 }
 
 /* Hide old logo styles */
