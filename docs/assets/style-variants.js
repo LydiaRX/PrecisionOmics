@@ -8,6 +8,8 @@
     b: "variant-b",
     "variant-c": "variant-c",
     c: "variant-c",
+    "variant-d": "variant-d",
+    d: "variant-d",
     default: "default",
   };
   const VALID_VARIANTS = new Set(Object.values(VARIANT_ALIASES));
@@ -65,7 +67,7 @@
 
     const link = document.createElement("link");
     link.rel = "stylesheet";
-    const suffix = variant === "variant-b" ? "b" : variant === "variant-c" ? "c" : variant === "variant-a" ? "a" : variant;
+    const suffix = variant === "variant-b" ? "b" : variant === "variant-c" ? "c" : variant === "variant-a" ? "a" : variant === "variant-d" ? "d" : variant;
     link.href = `assets/styles-variant-${suffix}.css`;
     link.setAttribute("data-style-variant", variant);
     document.head.appendChild(link);

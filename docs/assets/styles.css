@@ -708,10 +708,12 @@ header {
     margin: 0;
     opacity: 0.9;
 }
-.quote-source{
+
+.quote-source {
     color: var(--card) !important;
     font-size: var(--text-sm) !important;
 }
+
 /* Expected Outcomes Styles */
 .outcomes-grid {
     display: grid;
@@ -1310,6 +1312,8 @@ section {
 .team-card {
     flex: 0 0 280px;
     scroll-snap-align: start;
+    align-self: anchor-center;
+    height: -webkit-fill-available
 }
 
 .team-avatar {
@@ -1655,6 +1659,7 @@ footer {
 .news-card {
     flex: 0 0 280px;
     scroll-snap-align: start;
+    cursor: pointer;
 }
 
 .carousel-container {
@@ -1721,7 +1726,6 @@ footer {
 
 .news-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 16px 32px rgba(10, 30, 22, 0.12);
 }
 
 .news-card-link {
