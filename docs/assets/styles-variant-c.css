@@ -598,6 +598,30 @@ section {
     letter-spacing: 0.05em;
 }
 
+/* Align news cards with team card styling */
+.news-card {
+    background: var(--card);
+    border: 1px solid rgba(13, 31, 26, 0.08);
+    border-radius: var(--radius);
+    font-family: var(--font-primary);
+}
+
+.news-card h4 {
+    color: var(--accent-3);
+    font-size: var(--text-lg);
+    margin: 0;
+}
+
+.news-card p {
+    color: var(--muted);
+    font-size: var(--text-sm);
+}
+
+.news-card a,
+.news-card-link-text {
+    color: var(--accent-3);
+}
+
 /* News Article Head - Dark Theme */
 .news-article-head {
     padding: var(--space-4);
