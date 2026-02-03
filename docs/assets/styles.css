@@ -1476,7 +1476,7 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     width: min(400px, 90vw);
-    max-height: 80vh;
+    max-height: 85vh;
     overflow: hidden;
     padding: var(--space-5);
     background: linear-gradient(160deg, #ffffff 0%, #f7f3e7 100%);
@@ -1495,6 +1495,14 @@ section {
 
 .srollable-container {
     overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.srollable-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
 }
 
 .team-card--details .team-bio--full {
