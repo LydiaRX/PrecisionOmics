@@ -1632,7 +1632,7 @@ footer {
 }
 
 .justify-txt {
-    text-align: justify;
+    text-align: justify !important;
 }
 
 .hero-container {
