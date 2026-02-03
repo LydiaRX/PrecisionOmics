@@ -598,6 +598,36 @@ section {
     letter-spacing: 0.05em;
 }
 
+/* News Article Head - Dark Theme */
+.news-article-head {
+    padding: var(--space-4);
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.news-article-head .news-card-date {
+    display: inline-block;
+    padding: var(--space-1) var(--space-2);
+    background: var(--bg-tertiary);
+    color: var(--text-accent);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+    border: 1px solid var(--border-secondary);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.news-article-head h2 {
+    margin: 0 0 var(--space-2) 0;
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
 /* Contact Section - Dark Tech Style */
 #contact {
     padding: 3rem 0;
@@ -703,6 +733,20 @@ footer strong {
 }
 
 .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dark theme reveal for news articles (match card reveal style) */
+.news-article.reveal {
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid var(--border-primary);
+    background: var(--bg-card);
+    box-shadow: var(--shadow-md);
+}
+
+.news-article.reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
